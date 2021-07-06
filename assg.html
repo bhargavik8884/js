@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./vote.css">
+</head>
+<body>
+    <h1>vote your langauge</h1>
+    <div class="box">
+        <input type="text" name="vote" id="1" value="0" class="input-field">
+        <label for="name">Mongo</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <div class="box">
+        <input type="text" name="vote" id="2" value="0" class="input-field">
+        <label for="name">Express</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <div class="box">
+        <input type="text" name="vote" id="3" value="0" class="input-field">
+        <label for="name">React</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <div class="box">
+        <input type="text" name="vote" id="4" value="0" class="input-field">
+        <label for="name">Node</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <script>
+        var incrementButton=document.getElementsByClassName('inc');
+      
+        for(var i=0; i < incrementButton.length; i++){
+            var button=incrementButton[i];
+            button.addEventListener('click',function(event){
+                var buttonClicked=event.target;
+               
+                var input=buttonClicked.parentElement.children[0];
+                console.log(input);
+                var inputValue=input.value;
+                
+                var newValue=parseInt(inputValue) + 1;
+                
+                input.value=newValue;
+            })
+        }
+    </script>
+</body>
+</html>
